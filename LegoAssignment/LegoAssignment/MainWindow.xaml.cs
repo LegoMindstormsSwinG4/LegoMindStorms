@@ -32,6 +32,8 @@ namespace LegoAssignment
             MyBrick brickController = new MyBrick();
 
             brickController.Connect();
+
+            brickController.Drive();
         }
     }
 }

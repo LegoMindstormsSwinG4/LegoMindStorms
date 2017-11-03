@@ -27,6 +27,21 @@ namespace LegoAssignment
         {
             throw new NotImplementedException();
         }
+
+        public async void Drive(object sender, BrickChangedEventArgs e)
+        {
+            float lightSIV = e.Ports[InputPort.Three].SIValue;
+            if (lightSIV > 10)
+                {
+                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 100);
+                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 100);
+            }
+            else if(lightSIV <= 10)
+                {
+                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
+                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
+            }
+        }
     }
 
   
