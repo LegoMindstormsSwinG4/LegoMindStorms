@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoAssignment", "LegoAssignment\LegoAssignment.csproj", "{C6CB6CC2-77D1-4280-A768-439CA762FCAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Desktop", "..\..\Week 11 - Lego Mindstorms\legoev3-master\legoev3-master\Lego.Ev3.Desktop\Lego.Ev3.Desktop.csproj", "{79C444DE-86F1-4AFF-903A-4B6ED31655EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Desktop", "..\legoev3-master\legoev3-master\Lego.Ev3.Desktop\Lego.Ev3.Desktop.csproj", "{79C444DE-86F1-4AFF-903A-4B6ED31655EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11A077A8-0FD3-4909-B06C-81DBDB489BDC}
 	EndGlobalSection
 EndGlobal
