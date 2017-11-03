@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lego.Ev3.Core;
+using Lego.Ev3.Desktop;
 
 namespace LegoAssignment
 {
@@ -23,6 +25,13 @@ namespace LegoAssignment
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnTaskOne_Click(object sender, RoutedEventArgs e)
+        {
+            MyBrick brickController = new MyBrick();
+
+            brickController.Connect();
         }
     }
 }
