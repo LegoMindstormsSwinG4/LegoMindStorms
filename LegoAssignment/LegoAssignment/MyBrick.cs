@@ -24,21 +24,5 @@ namespace LegoAssignment
         {
 
         }
-
-        public async Task Drive()
-        {
-            float lightSIV = brick.Ports[InputPort.Three].SIValue;
-
-            if (lightSIV > 10)
-            {
-                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 100);
-                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 100);
-            }
-            else if(lightSIV <= 10)
-            {
-                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
-                await brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
-            }
-        }
     }
 }

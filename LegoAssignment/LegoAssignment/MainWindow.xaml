@@ -12,9 +12,27 @@
                 Lego Mindstorms Central Operating Control Panel
             </Label>
 
-            <Button x:Name="btnTaskOne" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="btnTaskOne_Click" Margin="5">
-                Task 1 - Navigate To Base
+            <Button x:Name="btnConnect" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnConnect_Click" Margin="5">
+                Connect
             </Button>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
+                
+                
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>

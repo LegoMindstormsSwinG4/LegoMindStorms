@@ -27,13 +27,11 @@ namespace LegoAssignment
             InitializeComponent();
         }
 
-        private async void btnTaskOne_Click(object sender, RoutedEventArgs e)
+        MyBrick brickController = new MyBrick();
+
+        private async void btnConnect_Click(object sender, RoutedEventArgs e)
         {
-            MyBrick brickController = new MyBrick();
-
             await brickController.Connect();
-
-            await brickController.Drive();
         }
     }
 }
