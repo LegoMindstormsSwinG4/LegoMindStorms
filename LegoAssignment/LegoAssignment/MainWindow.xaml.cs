@@ -27,11 +27,22 @@ namespace LegoAssignment
             InitializeComponent();
         }
 
-        MyBrick brickController = new MyBrick();
+        Brick brick = new Brick(new UsbCommunication());
+        float distanceSIV;
 
         private async void btnConnect_Click(object sender, RoutedEventArgs e)
         {
-            await brickController.Connect();
+            await brick.ConnectAsync();
+            brick.BrickChanged += OnBrickChanged;
+
+            await brick.DirectCommand.PlayToneAsync(50, 15, 666);
+        }
+
+        private void OnBrickChanged(object sender, BrickChangedEventArgs e)
+        {
+            distanceSIV = e.Ports[InputPort.Two].SIValue;
+
+            lblDistanceValue.Content = distanceSIV;
         }
     }
 }
