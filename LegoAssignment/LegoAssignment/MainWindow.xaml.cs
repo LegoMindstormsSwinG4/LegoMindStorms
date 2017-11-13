@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -43,6 +44,26 @@ namespace LegoAssignment
             distanceSIV = e.Ports[InputPort.Two].SIValue;
 
             lblDistanceValue.Content = distanceSIV;
+        }
+
+        private void btnDrive_Click(object sender, RoutedEventArgs e)
+        {
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(checkDistance);
+            timer.Interval = 1000;
+            timer.Enabled = true;
+        }
+
+        private void checkDistance(object sender, ElapsedEventArgs e)
+        {
+            if (distanceSIV > 10)
+            {
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 25, 1000, true);
+            }
+            else if (distanceSIV <= 10)
+            {
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
+            }
         }
     }
 }
