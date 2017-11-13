@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Lego.Ev3.Core;
 using Lego.Ev3.Desktop;
+using System.Diagnostics;
 
 namespace LegoAssignment
 {
@@ -38,24 +39,25 @@ namespace LegoAssignment
             await brick.DirectCommand.PlayToneAsync(50, 15, 666);
         }
 
-        private void OnBrickChanged(object sender, BrickChangedEventArgs e)
+        private void OnBrickChangedTaskOne(object sender, BrickChangedEventArgs e)
         {
             distanceSIV = e.Ports[InputPort.Two].SIValue;
             lblDistanceValue.Content = distanceSIV;
 
-            if (distanceSIV > 10)
+            if (distanceSIV > 20)
             {
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 25, 1000, true);
             }
-            else if (distanceSIV <= 10)
+            else if (distanceSIV <= 20)
             {
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A, -100, 3000, true);
             }
         }
 
         private void btnTask1_Click(object sender, RoutedEventArgs e)
         {
-            brick.BrickChanged += OnBrickChanged;
+            brick.BrickChanged += OnBrickChangedTaskOne;
         }
     }
 }
