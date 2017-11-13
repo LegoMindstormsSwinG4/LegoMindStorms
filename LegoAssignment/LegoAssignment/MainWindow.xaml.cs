@@ -34,7 +34,6 @@ namespace LegoAssignment
         private async void btnConnect_Click(object sender, RoutedEventArgs e)
         {
             await brick.ConnectAsync();
-            brick.BrickChanged += OnBrickChanged;
 
             await brick.DirectCommand.PlayToneAsync(50, 15, 666);
         }
@@ -42,20 +41,8 @@ namespace LegoAssignment
         private void OnBrickChanged(object sender, BrickChangedEventArgs e)
         {
             distanceSIV = e.Ports[InputPort.Two].SIValue;
-
             lblDistanceValue.Content = distanceSIV;
-        }
 
-        private void btnDrive_Click(object sender, RoutedEventArgs e)
-        {
-            System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(checkDistance);
-            timer.Interval = 1000;
-            timer.Enabled = true;
-        }
-
-        private void checkDistance(object sender, ElapsedEventArgs e)
-        {
             if (distanceSIV > 10)
             {
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 25, 1000, true);
@@ -64,6 +51,11 @@ namespace LegoAssignment
             {
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
             }
+        }
+
+        private void btnTask1_Click(object sender, RoutedEventArgs e)
+        {
+            brick.BrickChanged += OnBrickChanged;
         }
     }
 }

@@ -36,8 +36,8 @@
 
                 <Label x:Name="lblDistanceValue" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
 
-                <Button x:Name="btnDrive" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnDrive_Click">
-                    Drive
+                <Button x:Name="btnTask1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnTask1_Click">
+                    Task 1
                 </Button>
 
             </Grid>
