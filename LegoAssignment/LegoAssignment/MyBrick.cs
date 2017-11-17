@@ -26,7 +26,7 @@ namespace LegoAssignment
 
             if (distanceSIV > 20)
             {
-                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 40, 1000, true);
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 50, 1000, true);
             }
             else if (distanceSIV <= 20)
             {
