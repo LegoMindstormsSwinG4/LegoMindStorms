@@ -53,11 +53,13 @@ namespace LegoAssignment
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A, -100, 3000, true);
             }
+
+          /*  private void btnTask1_Click(object sender, RoutedEventArgs e)
+            {
+                brick.BrickChanged += OnBrickChangedTaskOne;
+            }*/
         }
 
-        private void btnTask1_Click(object sender, RoutedEventArgs e)
-        {
-            brick.BrickChanged += OnBrickChangedTaskOne;
-        }
+
     }
 }
