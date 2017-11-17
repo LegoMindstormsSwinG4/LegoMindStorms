@@ -23,7 +23,6 @@ namespace LegoAssignment
         private void OnBrickChangedTaskOne(object sender, BrickChangedEventArgs e)
         {
             distanceSIV = e.Ports[InputPort.Two].SIValue;
-            //lblDistanceValue.Content = distanceSIV;
 
             if (distanceSIV > 20)
             {
@@ -32,7 +31,7 @@ namespace LegoAssignment
             else if (distanceSIV <= 20)
             {
                 brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
-                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A, -100, 3000, true);
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A, -100, 5000, true);
             }
         }
 

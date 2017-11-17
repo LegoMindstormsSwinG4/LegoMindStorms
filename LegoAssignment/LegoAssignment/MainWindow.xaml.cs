@@ -29,6 +29,7 @@ namespace LegoAssignment
             InitializeComponent();
         }
 
+
         MyBrick myBrick = new MyBrick();
 
         private async void btnConnect_Click(object sender, RoutedEventArgs e)
