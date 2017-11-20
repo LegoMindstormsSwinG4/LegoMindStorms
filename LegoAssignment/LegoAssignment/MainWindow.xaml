@@ -20,7 +20,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
-                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -30,14 +29,20 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">
-                    Distance Value:
-                </Label>
+                <Button x:Name="btnBase1" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnBase1_Click">
+                    Base: Blue/Red
+                </Button>
 
-                <Label x:Name="lblDistanceValue" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
+                <Button x:Name="btnBase2" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                    Base: Red/Black
+                </Button>
 
-                <Button x:Name="btnTask1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnTask1_Click">
-                    Task 1
+                <Button x:Name="btnBase3" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                    Base: Black/Yellow
+                </Button>
+
+                <Button x:Name="btnBase4" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                    Base: Yellow/Blue
                 </Button>
 
             </Grid>

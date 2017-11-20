@@ -11,6 +11,7 @@ namespace LegoAssignment
     class MyBrick
     {
         Brick brick = new Brick(new UsbCommunication());
+        ColourSensor sensor = new ColourSensor();
         float distanceSIV;
 
         public async Task brickConnect()
@@ -20,24 +21,24 @@ namespace LegoAssignment
             await brick.DirectCommand.PlayToneAsync(50, 15, 666);
         }
 
-        private void OnBrickChangedTaskOne(object sender, BrickChangedEventArgs e)
+        private void OnBrickChangedBlueRed(object sender, BrickChangedEventArgs e)
         {
             distanceSIV = e.Ports[InputPort.Two].SIValue;
 
-            if (distanceSIV > 20)
+            if (distanceSIV > 7)
             {
-                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 50, 1000, true);
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 50, 1000, false);
             }
-            else if (distanceSIV <= 20)
+            else
             {
-                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, true);
-                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A, -100, 5000, true);
+                brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.A | OutputPort.D, 0, 1000, false);
+                sensor.baseBRCheck(sender, e, brick);
             }
         }
 
-        public void taskOne()
+        public void BaseBlueRed()
         {
-             brick.BrickChanged += OnBrickChangedTaskOne;
+             brick.BrickChanged += OnBrickChangedBlueRed;
         }
     }
 }
