@@ -33,15 +33,15 @@
                     Base: Blue/Red
                 </Button>
 
-                <Button x:Name="btnBase2" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                <Button x:Name="btnBase2" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnBase2_Click">
                     Base: Red/Black
                 </Button>
 
-                <Button x:Name="btnBase3" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                <Button x:Name="btnBase3" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnBase3_Click">
                     Base: Black/Yellow
                 </Button>
 
-                <Button x:Name="btnBase4" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+                <Button x:Name="btnBase4" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5" Click="btnBase4_Click">
                     Base: Yellow/Blue
                 </Button>
 

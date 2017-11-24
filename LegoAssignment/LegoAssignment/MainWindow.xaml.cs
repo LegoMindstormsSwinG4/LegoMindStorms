@@ -41,6 +41,21 @@ namespace LegoAssignment
             Lego.BaseBlueRed();
         }
 
+        private void btnBase2_Click(object sender, RoutedEventArgs e)
+        {
+            Lego.BaseBlackRed();
+        }
+
+        private void btnBase3_Click(object sender, RoutedEventArgs e)
+        {
+            Lego.BaseBlackYellow();
+        }
+
+        private void btnBase4_Click(object sender, RoutedEventArgs e)
+        {
+            Lego.BaseYellowBlue();
+        }
+
 
         // black1, red5, blue2, yellow7
     }
